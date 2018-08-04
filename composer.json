@@ -1,0 +1,13 @@
+{
+    "name": "geega/php-simple-orm",
+    "description": "Simple orm on php",
+    "type": "library",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Geega\\SimpleOrm\\": "src"
+        }
+    },
+    "require": {}
+}

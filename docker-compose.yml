@@ -1,0 +1,30 @@
+version: '3'
+
+networks:
+   net:
+      driver: bridge
+#      driver_opts:
+#        com.docker.network.enable_ipv6: "false"
+      ipam:
+        driver: default
+        config:
+          - subnet: 172.20.1.0/24
+          #  gateway: 172.18.1.1
+
+services:
+  web:
+    image: geega/php7-apache
+    container_name: php7SimpleOrm
+    ports:
+      - 88:80
+    volumes:
+      - ./:/var/www
+#    environment:
+#      PDO_HOST: food_db
+#      PDO_DATABASE: food_db
+#      PDO_USER: ${FOOD_MYSQL_USER}
+#      PDO_PASSWORD: ${FOOD_MYSQL_PASSWORD}
+#    links:
+#      - food_db
+    networks:
+      - net
