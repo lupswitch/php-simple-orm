@@ -2,14 +2,26 @@
     "name": "geega/php-simple-orm",
     "description": "Simple orm on php",
     "type": "library",
+    "keywords": [
+        "php",
+        "MySQL ORM",
+        "Simple"
+    ],
     "license": "MIT",
-    "minimum-stability": "dev",
+    "authors": [
+        {
+            "name": "Script",
+            "email": "varpihovsky@gmail.com",
+            "homepage": "http://geega.net",
+            "role": "Developer"
+        }
+    ],
     "autoload": {
         "psr-4": {
             "Geega\\SimpleOrm\\": "src"
         }
     },
-    "version": "0.0.1",
+    "version": "0.0.2",
     "require": {
         "php" : ">=5.3.0"
     },
