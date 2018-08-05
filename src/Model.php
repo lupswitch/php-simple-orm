@@ -68,6 +68,25 @@ class Model
     }
 
     /**
+     * @param $data
+     * @return mixed
+     */
+    static public function findBy($data)
+    {
+        $model = new static;
+        $sql = 'SELECT * FROM '.$model->table.' WHERE ';
+        $values = [];
+        foreach ($data as $key => $value) {
+            $sql .= $key.' = ? AND ';
+            $values[] = $value;
+        }
+        $sql = trim($sql, ' AND ');
+        $result = $model->execute($sql, $values);
+        return $result;
+    }
+
+
+    /**
      * Find by query
      * @param $sqlQuery
      * @param array $params
