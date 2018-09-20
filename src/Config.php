@@ -7,22 +7,43 @@
 
 namespace Geega\SimpleOrm;
 
-
+/**
+ * Class Config
+ * @package Geega\SimpleOrm
+ */
 class Config
 {
+    /**
+     * @var string
+     */
     private $host;
 
+    /**
+     * @var string
+     */
     private $database;
 
+    /**
+     * @var string
+     */
     private $user;
 
+    /**
+     * @var string
+     */
     private $password;
 
+    /**
+     * Config constructor.
+     */
     public function __construct()
     {
         $this->init();
     }
 
+    /**
+     * Main init method
+     */
     public function init()
     {
         $host =getenv('PDO_HOST');
@@ -45,6 +66,10 @@ class Config
         }
     }
 
+    /**
+     * @param $host
+     * @return $this
+     */
     public function setHost($host)
     {
         $this->host = $host;
@@ -52,39 +77,63 @@ class Config
     }
 
 
+    /**
+     * @param $dbName
+     * @return $this
+     */
     public function setDatabase($dbName)
     {
         $this->database = $dbName;
         return $this;
     }
 
+    /**
+     * @param $user
+     * @return $this
+     */
     public function setUser($user)
     {
         $this->user = $user;
         return $this;
     }
 
+    /**
+     * @param $password
+     * @return $this
+     */
     public function setPassword($password)
     {
         $this->password = $password;
         return $this;
     }
 
+    /**
+     * @return mixed
+     */
     public function getHost()
     {
         return $this->host;
     }
 
+    /**
+     * @return mixed
+     */
     public function getDatabase()
     {
         return $this->database;
     }
 
+    /**
+     * @return mixed
+     */
     public function getUser()
     {
         return $this->user;
     }
 
+    /**
+     * @return mixed
+     */
     public function getPassword()
     {
         return $this->password;

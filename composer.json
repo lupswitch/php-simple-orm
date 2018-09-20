@@ -21,7 +21,7 @@
             "Geega\\SimpleOrm\\": "src"
         }
     },
-    "version": "0.0.3",
+    "version": "0.1.0",
     "require": {
         "php" : ">=5.3.0"
     },
