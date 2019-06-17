@@ -7,6 +7,8 @@
 
 namespace Geega\SimpleOrm;
 
+use Geega\SimpleOrm\Drivers\PdoFactory;
+
 /**
  * Class Model
  * @package Geega\SimpleOrm
@@ -26,23 +28,13 @@ class Model
     /**
      * Model constructor.
      */
-    public function __construct(Config $config)
+    public function __construct(Config $config, PdoFactory $factory = null)
     {
-        $host = $config->getHost();
-        $database = $config->getDatabase();
-        $user = $config->getUser();
-        $password = $config->getPassword();
-
-        $connect = "mysql:dbname={$database};host={$host}";
-
-        $this->connect = new \PDO($connect, $user, $password);
-        $this->connect->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
-        $this->connect->exec("SET CHARACTER SET utf8");
+        $this->connect = $factory->getInstance($config)->getPdo();
     }
 
 
     /**
-     *
      * @return mixed
      */
     static public function all()
