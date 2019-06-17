@@ -2,8 +2,9 @@
 
 
 
-## Change log
 
+## Change log
+- 0.2.0 - change structure for create PDO object 
 - 0.0.1 - first public version
 - 0.0.2 - add LICENSE.md 
 - 0.0.3 - add special method findBy
@@ -11,4 +12,11 @@
 
 ## Examples 
 
+
+
+
+
+## TODO 
+
+- Support SQLite 
 

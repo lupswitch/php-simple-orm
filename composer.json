@@ -5,7 +5,8 @@
     "keywords": [
         "php",
         "MySQL ORM",
-        "Simple"
+        "Simple",
+        "SQLite"
     ],
     "license": "MIT",
     "authors": [
@@ -21,7 +22,7 @@
             "Geega\\SimpleOrm\\": "src"
         }
     },
-    "version": "0.1.0",
+    "version": "0.2.0",
     "require": {
         "php" : ">=5.3.0"
     },

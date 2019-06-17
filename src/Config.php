@@ -13,6 +13,7 @@ namespace Geega\SimpleOrm;
  */
 class Config
 {
+
     /**
      * @var string
      */
@@ -32,6 +33,9 @@ class Config
      * @var string
      */
     private $password;
+
+
+    private $filePath;
 
     /**
      * Config constructor.
@@ -64,6 +68,14 @@ class Config
         if($password) {
             $this->setPassword($password);
         }
+
+
+        $filePath = getenv('PDO_FILEPATH');
+
+        if($filePath) {
+
+        }
+
     }
 
     /**
@@ -137,5 +149,15 @@ class Config
     public function getPassword()
     {
         return $this->password;
+    }
+
+    /**
+     * @param $filePath
+     * @return $this
+     */
+    public function setFilePath($filePath) {
+        $this->filePath = $filePath;
+
+        return $this;
     }
 }

@@ -61,6 +61,7 @@ abstract class Enum
      */
     abstract public static function getLabels();
 
+
     /**
      * Get all values
      * @return array
@@ -69,6 +70,7 @@ abstract class Enum
     {
         return array_keys(static::getList());
     }
+
 
     /**
      * Is valid value
@@ -79,6 +81,7 @@ abstract class Enum
     {
         return array_key_exists($value, static::getList());
     }
+
 
     /**
      * Get label by name
